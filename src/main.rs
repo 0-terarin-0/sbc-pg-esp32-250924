@@ -14,9 +14,9 @@ fn main() {
     esp_idf_svc::log::EspLogger::initialize_default();
 
     log::info!("Hello, world!");
-    let mut pin = PinDriver::output(peripherals.pins.gpio32)?;
+    let mut pin = PinDriver::output(peripherals.pins.gpio32);
     loop {
-        if pin.is_low()? {
+        if pin.is_low() {
             log::info!("Landing is detected.");
         }
         FreeRtos::delay_ms(1000);
