@@ -1,10 +1,8 @@
-use esp_idf_hal::delay::FreeRtos;
-use esp_idf_hal::gpio::Level;
 use esp_idf_hal::gpio::PinDriver;
 use esp_idf_hal::gpio::Pull;
 use esp_idf_hal::peripherals::Peripherals;
 
-fn main()-> Result<(), Box<dyn std::error::Error>>{
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     // It is necessary to call this function once. Otherwise some patches to the runtime
     // implemented by esp-idf-sys might not link properly. See https://github.com/esp-rs/esp-idf-template/issues/71
     esp_idf_svc::sys::link_patches();
@@ -22,5 +20,4 @@ fn main()-> Result<(), Box<dyn std::error::Error>>{
             output.set_low()?;
         }
     }
-     
 }
